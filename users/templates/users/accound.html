@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    zarejestruj sie
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Witaj <span>{{ uzytkownik.username }}</span></h2>
+    <p>Nazwa uzytkownika: {{ uzytkownik.username }}</p>
+    <p>Imie: {{ uzytkownik.first_name }}</p>
+    <p>Nazwisko: {{ uzytkownik.last_name }}</p>
+    <p>Email: {{ uzytkownik.email }}</p>
+    <form action="/users/logout/" method="post">
+        {% csrf_token %}
+        <button class="logoutbutton">Wyloguj sie</button>
+    </form>
+{% endblock %}

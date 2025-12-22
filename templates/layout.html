@@ -41,6 +41,22 @@
 
             nav ul li a:hover{
                 color: rgb(0, 0, 159);
+                text-decoration: underline;
+            }
+
+            form .logoutBtn{
+                background-color: #ffffff00;
+                font-size: 15.5px;
+                border: none;
+                text-decoration: none;
+                color: blue;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            
+            form .logoutBtn:hover{
+                color: rgb(0, 0, 159);
+                text-decoration: underline;
             }
 
             nav h2{
@@ -69,18 +85,18 @@
         <ul>
             <li><a href="/">Strona główna</a></li>
             <li><a href="/cars/">Samochody</a></li>
-            <!-- <li><a href="/">Kontakt</a></li> -->
             {% if not user.is_authenticated %}
                 <li><a href="/users/login/">Zaloguj sie</a></li>
+                <li><a href="/users/register/">Zarejestruj sie</a></li>
+            {% else %}
+                <li>
+                    <form action="/users/logout/" method="post">
+                        {% csrf_token %}
+                        <button class="logoutBtn">Wyloguj sie</button>
+                    </form>
+                </li>
+                <li><a href="/users/accound/">Konto</a></li>
             {% endif %}
-            <li><a href="/users/register/">Zarejestruj sie</a></li>
-            <li>
-                <form action="/users/logout/" method="post">
-                    {% csrf_token %}
-                    <button>Wyloguj sie</button>
-                </form>
-            </li>
-            <li><a href="/">Konto</a></li>
         </ul>
     </nav> 
     <main>

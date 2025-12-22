@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="{% static 'users/style.css' %}">
 {% endblock %}
 
+
 {% block content %}
-    <h1>Wylogowano!</h1>
+    <div class="komunikat"><h1>Wylogowano z konta!</h1></div>
+    <div>
+        <a href="/users/register/">Utwórz nowe konto</a>
+        <span>lub</span>
+        <a href="/users/login/">Zaloguj się na istniejące konto</a>
+    </div>
 {% endblock %}

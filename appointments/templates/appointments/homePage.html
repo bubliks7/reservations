@@ -11,6 +11,9 @@
 
 {% block content %}
     <h1>Wyporzyczalnia</h1>
+    <div class="more" >
+        <a href="/cars/">Zobacz więcej dostępnych samochodów</a>
+    </div>
     <div class="container">
         {% for auto in auta %}
             <div class="panel">
@@ -24,8 +27,5 @@
                 <a href="/"><button>Zarezerwuj</button></a>
             </div>
         {% endfor %}
-    </div>
-    <div class="more" >
-        <a href="/cars/">Zobacz więcej dostępnych samochodów</a>
     </div>
 {% endblock %}
