@@ -8,3 +8,7 @@ def home(request):
 def allCars(request):
     auta = Samochod.objects.all()
     return render(request, 'appointments/allCars.html', {'auta': auta})
+
+def seeMore(request, pk):
+    auta = get_object_or_404(Samochod, pk=pk)
+    return render(request, "appointments/seeMore.html", {'auta': auta})

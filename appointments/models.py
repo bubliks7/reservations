@@ -6,6 +6,7 @@ from datetime import date
 # Create your models here.
 
 class Samochod(models.Model):
+    id = models.AutoField(primary_key=True)
     marka = models.CharField(max_length=100)
     model = models.CharField(max_length=50)
     rok = models.IntegerField()
@@ -29,7 +30,7 @@ class Rezerwacja(models.Model):
         ('confirmed', 'Potwierdzona'),
         ('cancelled', 'Anulowana'),
     ]
-
+    id = models.AutoField(primary_key=True)
     klient = models.ForeignKey(User, on_delete=models.CASCADE)
     auto = models.ForeignKey(Samochod, on_delete=models.CASCADE, related_name='rezerwacje')
     data_od = models.DateField()

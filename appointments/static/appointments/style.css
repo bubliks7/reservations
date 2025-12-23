@@ -7,7 +7,8 @@
 .panel{
     background-color: #fff;
     border-radius: 10px;
-    margin: 5px;
+    max-width: 500px;
+    margin: 5px auto;
     padding: 20px;
 }
 main h1{
@@ -49,4 +50,8 @@ main h1{
 }
 .more a:hover{
     text-decoration: underline;
+}
+
+.opis{
+    margin: 10px 0;
 }
