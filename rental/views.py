@@ -1,3 +1,23 @@
-# from django.shortcuts import render, get_object_or_404
-# from appointments.models import Rezerwacja, Samochod
-# # Create your views here.
+from django.shortcuts import render, get_object_or_404, redirect
+from appointments.models import Samochod
+from django.contrib.auth.decorators import login_required
+from .forms import RezerwacjaForm
+# Create your views here.
+
+@login_required
+def rezerwuj(request, pk):
+    auto = get_object_or_404(Samochod, pk=pk)
+
+    if request.method == 'POST':
+        form = RezerwacjaForm(request.POST)
+        form.instance.auto = auto # inaczej wywala blad
+        if form.is_valid():
+            rezerwacja = form.save(commit=False)
+            rezerwacja.klient = request.user
+            rezerwacja.auto = auto
+            rezerwacja.save()
+            return redirect('/') # pozniej zmienie na mojeRezerwacje
+    else:
+        form = RezerwacjaForm()
+
+    return render(request, 'rental/create.html', {'form': form, 'auto': auto})

@@ -1,8 +1,8 @@
-# from django.urls import path
-# from . import views
+from django.urls import path
+from . import views
 
-# app_name = "rental"
+app_name = "rental"
 
-# urlpatterns = [
-
-# ]
+urlpatterns = [
+    path('create/<int:pk>', views.rezerwuj, name='rezerwuj'),
+]
