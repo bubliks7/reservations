@@ -16,13 +16,13 @@ def rezerwuj(request, pk):
             rezerwacja.klient = request.user
             rezerwacja.auto = auto
             rezerwacja.save()
-            return redirect('/') # pozniej zmienie na mojeRezerwacje
+            return redirect('/rental/myReservations/')
     else:
         form = RezerwacjaForm()
 
     return render(request, 'rental/create.html', {'form': form, 'auto': auto})
 
+@login_required
 def mojeRezerwacje(request):
-    rezerwacje = Rezerwacja.objects.all()
-    # auta = Samochod.objects.all()
+    rezerwacje = Rezerwacja.objects.filter(klient=request.user)
     return render(request, "rental/myReservations.html", {'rezerwacje': rezerwacje})

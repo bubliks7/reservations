@@ -21,8 +21,10 @@
             </div>
         
         {% empty %}
-            <p>Nie masz jeszcze rezerwacji</p>
-            <a href="/cars/">Wybierz jakieś auto</a>
+            <div class="empty">
+                <p>Nie masz jeszcze rezerwacji</p>
+                <a href="/cars/">Wybierz jakieś auto</a>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}

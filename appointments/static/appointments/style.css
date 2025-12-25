@@ -14,7 +14,6 @@
 main h1{
     text-align: center;
 }
-
 .panel button{
     padding: 6px;
     border: none;
@@ -54,4 +53,8 @@ main h1{
 
 .opis{
     margin: 10px 0;
+}
+
+header{
+    text-align: center;
 }

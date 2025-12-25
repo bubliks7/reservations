@@ -24,7 +24,7 @@ a:hover{
     border-radius: 15px;
     background-color: blue;
     color: white;
-    width: 100%;
+    width: 12vw;
     cursor: pointer;
     margin-top: 8px;
     transition: 0.3s ease;
@@ -32,4 +32,9 @@ a:hover{
 .logoutbutton:hover{
     background-color: rgb(3, 3, 144);
     border-radius: 10px;
+}
+
+.zobaczRezerw{
+    font-weight: bold;
+    margin: 10px 0 0 0;
 }
