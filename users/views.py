@@ -13,7 +13,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Utworzono konto')
-            return redirect('/login/')
+            return redirect('/users/login/')
     else:
         form = RejestracjaForm()
     return render(request, 'users/register.html', {'form': form})
@@ -37,3 +37,4 @@ def logout_view(request):
 def accound(request):
     uzytkownik = request.user
     return render(request, "users/accound.html", {'uzytkownik': uzytkownik})
+ 

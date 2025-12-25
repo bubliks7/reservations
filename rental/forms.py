@@ -9,3 +9,5 @@ class RezerwacjaForm(forms.ModelForm):
             'data_od': forms.DateInput(attrs={'type': 'date'}),
             'data_do': forms.DateInput(attrs={'type': 'date'}),
         }
+
+    
