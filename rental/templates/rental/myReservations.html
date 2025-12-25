@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Twoje rezerwacje
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'rental/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="panelRezerwacji">
+        {% for rezerwacja in rezerwacje %}
+            <p>{{ rezerwacja.auto }}</p>
+            <p>od: {{ rezerwacja.data_od }}</p>
+            <p>do: {{ rezerwacja.data_do }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

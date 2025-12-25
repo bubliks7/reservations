@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from appointments.models import Samochod
+from appointments.models import Samochod, Rezerwacja
 from django.contrib.auth.decorators import login_required
 from .forms import RezerwacjaForm
 # Create your views here.
@@ -21,3 +21,7 @@ def rezerwuj(request, pk):
         form = RezerwacjaForm()
 
     return render(request, 'rental/create.html', {'form': form, 'auto': auto})
+
+def mojeRezerwacje(request):
+    rezerwacje = Rezerwacja.objects.all()
+    return render(request, "rental/myReservations.html", {'rezerwacje': rezerwacje})

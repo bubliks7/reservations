@@ -5,4 +5,5 @@ app_name = "rental"
 
 urlpatterns = [
     path('create/<int:pk>', views.rezerwuj, name='rezerwuj'),
+    path('myReservations/', views.mojeRezerwacje, name='mojeRezerwacje'),
 ]
