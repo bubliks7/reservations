@@ -24,4 +24,5 @@ def rezerwuj(request, pk):
 
 def mojeRezerwacje(request):
     rezerwacje = Rezerwacja.objects.all()
+    # auta = Samochod.objects.all()
     return render(request, "rental/myReservations.html", {'rezerwacje': rezerwacje})

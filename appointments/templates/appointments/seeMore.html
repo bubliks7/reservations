@@ -18,7 +18,7 @@
             <p>Cena: {{auta.cena_za_dzien}} zl</p>
             <p class="opis">{{auta.opis}}</p>
             <img src="{{ auta.zdjecie.url }}" alt="obraz">
-            <a href="{% url 'appointments:seeMore' pk=auta.pk %}"><button>Zarezerwuj</button></a>
+            <a href="{% url 'rental:rezerwuj' pk=auto.pk %}"><button class="rezerwuj">Zarezerwuj</button></a>
         </div>
     </div>
 {% endblock %}

@@ -10,11 +10,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="panelRezerwacji">
+    <div class="container">
         {% for rezerwacja in rezerwacje %}
-            <p>{{ rezerwacja.auto }}</p>
-            <p>od: {{ rezerwacja.data_od }}</p>
-            <p>do: {{ rezerwacja.data_do }}</p>
+            <div class="panelRezerwacji">
+                <p>{{ rezerwacja.auto }}</p>
+                <p>od: {{ rezerwacja.data_od }}</p>
+                <p>do: {{ rezerwacja.data_do }}</p>
+                <img src="{{ rezerwacja.auto.zdjecie.url }}" alt="zdjecie samochodu">
+                <a href="/"><button type="submit">Anuluj rezerwacje</button></a>     <!-- jak dodam anulowanie to zmienie / -->
+            </div>
+        
+        {% empty %}
+            <p>Nie masz jeszcze rezerwacji</p>
+            <a href="/cars/">Wybierz jakieś auto</a>
         {% endfor %}
     </div>
 {% endblock %}
